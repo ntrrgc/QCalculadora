@@ -13,3 +13,6 @@
 
 #QtCreator user files
 *.user
+
+#No makefiles. Use qmake.
+Makefile
