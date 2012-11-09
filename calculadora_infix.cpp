@@ -53,17 +53,12 @@ std::queue<Palabra> infix2rpn(std::queue<Palabra>& infix_input) {
             break;
         case Palabra::OPERADOR:
         {
-            while (!operator_stack.empty()) {
-                Palabra palabra_pila = operator_stack.top();
-
-                if (palabra_pila.tipo == Palabra::OPERADOR) {
-                    if (palabra_leida.operador() <= palabra_pila.operador()) {
-                        rpn_output.push(palabra_pila);
-                        operator_stack.pop();
-                        continue;
-                    }
-                }
-                break;
+            while (!operator_stack.empty() &&
+                   operator_stack.top().tipo == Palabra::OPERADOR &&
+                   operator_stack.top().operador() > palabra_leida.operador())
+            {
+                rpn_output.push(operator_stack.top());
+                operator_stack.pop();
             }
             operator_stack.push(palabra_leida);
             break;
