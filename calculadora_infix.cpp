@@ -2,7 +2,6 @@
 #include "calculadora.h"
 #include "operador.h"
 #include "tokenizer.h"
-#include "noshortcircuit.h"
 #include <stdexcept>
 #include <sstream>
 #include <string>

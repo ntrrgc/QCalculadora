@@ -25,8 +25,7 @@ HEADERS  += qcalculadora.h \
     calculadora_infix.h \
     operador.h \
     palabra.h \
-    tokenizer.h \
-    noshortcircuit.h
+    tokenizer.h
 
 FORMS    += qcalculadora.ui
 
